@@ -30,7 +30,7 @@ For example:
 ```
 
 The shortest string is `"flow"`, whose length is `4`. Therefore, we only need to check the first 4 characters.
----
+
 
 ### 2. Take the first string as the reference
 
