@@ -2,8 +2,10 @@ class Solution {
 public:
     vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
         int n = grid.size();
+        int missing = -1;
+        int repeated = -1;
         vector<pair<int,int>> counter;
-    vector<int>temp;
+    
     for(int i = 1; i<=n*n;i++)
     {
         counter.push_back({i,0});
@@ -24,19 +26,15 @@ public:
      {
          if(j.second > 1)
          {
-             temp.push_back(j.first);
+             repeated = j.first;
          }
-
-     }
-     for(auto j : counter)
-     {
-         if(j.second == 0)
+         else if(j.second == 0)
          {
-             temp.push_back(j.first);
+            missing= j.first;
          }
 
      }
-     return temp;
+     return {repeated, missing};
     }
     
 };
